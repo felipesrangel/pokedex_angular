@@ -2,6 +2,7 @@
 <poke-header></poke-header>
 
 <main>
+    <ng-template [ngIf]="isLoading">
     <section class="pokemon_name">
         <h1>{{pokemon[0].name}}</h1>
         <h2>{{pokemon[1].names[0].name}}</h2>
@@ -30,4 +31,9 @@
             </a>
         </article>
     </section>
+    </ng-template>
+
+    <img src="../../../assets/error.png" alt="Falha na busca"
+    width="100%"
+    *ngIf="apiError">
 </main>
